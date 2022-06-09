@@ -2,11 +2,9 @@
 
 <ul class="courses">
   <li *ngFor="let course of courses">
-    <button [class.selected]="course === selectedCourse" type="button" (click)="onSelect(course)">
-      <span class="badge">{{course.id}}</span>
-      <span class="name">{{course.name}}</span>
-    </button>
+    <a routerLink="/detail/{{course.id}}">
+        <span class="badge">{{course.id}}</span> {{course.name}}
+      </a>
   </li>
 </ul>
 
-<app-course-detail [course]="selectedCourse"></app-course-detail>

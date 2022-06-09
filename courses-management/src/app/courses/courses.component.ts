@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../course';
-import { MessageService } from '../message.service';
 
 import { CourseService } from '../course.service';
 
@@ -11,19 +10,12 @@ import { CourseService } from '../course.service';
 })
 export class CoursesComponent implements OnInit {
 
-  selectedCourse?: Course;
   courses:Course[] = [];
 
-  constructor(private courseService: CourseService, private messageService: MessageService) {}
+  constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
     this.getCourses;
-  }
-
-  
-  onSelect(course: Course): void {
-    this.selectedCourse = course;
-    this.messageService.add(`CoursesComponent: Selected course id=${course.id}`);
   }
 
   getCourses(): void {
